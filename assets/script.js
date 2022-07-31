@@ -7,6 +7,7 @@ let particleArray = [];
 const colors = ["#2b2d42", "#8d99ae", "#edf2f4", "#ef233c", "#d90429"];
 const maxSize = 40;
 const minSize = 0;
+const mouseRadius = 60; // the number of pixels around the mouse where the particles will grow
 
 // mouse position
 let mouse = {
