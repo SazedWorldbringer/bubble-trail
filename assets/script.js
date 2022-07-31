@@ -7,3 +7,14 @@ let particleArray = [];
 const colors = ["#2b2d42", "#8d99ae", "#edf2f4", "#ef233c", "#d90429"];
 const maxSize = 40;
 const minSize = 0;
+
+// mouse position
+let mouse = {
+  x: null,
+  y: null,
+};
+window.addEventListener("mousemove", (event) => {
+  mouse.x = event.x;
+  mouse.y = event.y;
+  console.log(mouse);
+});
