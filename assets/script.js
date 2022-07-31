@@ -89,3 +89,14 @@ function init() {
 }
 
 // a function that generates values for each particles and populates the particles array
+
+// animation loop
+function animate() {
+  requestAnimationFrame(animate);
+  ctx.clearRect(0, 0, innerWidth, innerHeight);
+
+  for (let i = 0; i < particleArray.length; i++) {
+    particleArray[i].update();
+  }
+}
+// clears away the canvas, and runs the update function for each particle in the particleArray
