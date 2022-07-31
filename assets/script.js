@@ -100,3 +100,6 @@ function animate() {
   }
 }
 // clears away the canvas, and runs the update function for each particle in the particleArray
+
+init();
+animate();
