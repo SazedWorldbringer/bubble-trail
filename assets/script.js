@@ -48,4 +48,28 @@ Particle.prototype.update = function () {
   }
   this.x += this.directionX;
   this.y += this.directionY;
+
+  // mouse interactivity
+  // check if the difference between the mouse coordinate and particle coordinate is between 60 and -60
+  // if that's true, and if the particle is smaller than maxSize,
+  // then we increase it's size by 3 pixels until it reaches maxSize
+  // if the particle is away from the mouse, and it's size is more than the minSize,
+  // reduce it's size by 0.1
+  // check if the particle size is less than 0(fix: we shouldn't need to specify this)
+  if (
+    mouse.x - this.x < mouseRadius &&
+    mouse.x - this.x > -mouseRadius &&
+    mouse.y - this.y < mouseRadius &&
+    mouse.y - this.y > -mouseRadius
+  ) {
+    if (this.size < maxSize) {
+      this.size += 3;
+    }
+  } else if (this.size > minSize) {
+    this.size -= 0.1;
+  }
+  if (this.size < 0) {
+    this.size = 0;
+  }
+  this.draw();
 };
