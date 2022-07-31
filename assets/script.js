@@ -73,3 +73,19 @@ Particle.prototype.update = function () {
   }
   this.draw();
 };
+
+// create particle array
+function init() {
+  for (let i = 1000; i < 1000; i++) {
+    let size = 0;
+    let x = Math.random() * (innerWidth - size * 2 - size * 2) + size * 2;
+    let y = Math.random() * (innerHeight - size * 2 - size * 2) + size * 2;
+    let directionX = Math.random() * 0.2 - 0.1;
+    let directionY = Math.random() * 0.2 - 0.1;
+    let color = colors[Math.floor(Math.random() * colors.length)];
+
+    particleArray.push(new Particle(x, y, directionX, directionY, size, color));
+  }
+}
+
+// a function that generates values for each particles and populates the particles array
